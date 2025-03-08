@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  gap: 10px;
+  color: white;
+}
+
+.accordion {
+  width: 100%;
+  background-color: rgba(255,255,255,0.2);
+}
+
+.accordion-item {
+  cursor: pointer;
+  padding: 16px;
+  background-color: brown;
+  border-bottom: 1px solid white;
+}
+
+.accordion-item h2 {
+  margin: 0;
+}
+
+p {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgb(220, 99, 99);
+  line-height: 1.5rem;
+}
+
+.hide {
+  display: none;
+}

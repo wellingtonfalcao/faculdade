@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+}
+
+p {
+  color: white;
+  font-size: 2em;
+}
+
+img {
+  width: 600px;
+}

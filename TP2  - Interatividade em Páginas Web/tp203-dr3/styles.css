@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.quadrado {
+width: 100px;
+height: 100px;
+background-color: #F00;
+margin: 20px auto;
+cursor: pointer;
+border: solid 3px #999;
+}
