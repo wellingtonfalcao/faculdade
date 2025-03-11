@@ -7,10 +7,7 @@ function minLength(valor, tamanho) {
     return true;
 }
 
-//Validar strings maiores que "n" com arrow function
+//Validar strings maiores que "n" com arrow function e operador ternário.
 let maxLength = (valor, tamanho) => {
-    if(valor.length > tamanho){
-        return false;
-    }
-    return true;
+    return valor.length > tamanho ? false : true;
 }
