@@ -1,5 +1,5 @@
 let tituloHTML = document.querySelector("#title");
-tituloHTML.textContent = "Exercício 6: - Contador de Vogais";
+tituloHTML.textContent = "Exercício 7: Lista de Compras - Parte 1";
 
 /* 
 
