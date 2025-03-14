@@ -31,17 +31,20 @@ const autoresBrasileiros = [
 let autoresCorrigidos = [];
 
 autoresBrasileiros.forEach((autor) => {
-    let nome = autor.split(" ");
-    for(let i = 0; i < nome.length; i++){
-        nome.forEach((palavra) => {
-s            if(palavra !== "do" || palavra !== "da" || palavra !== "de"){
-                palavra[0].toLocaleUpperCase();
-                console.log(palav)
 
-            }
-        })
-    }
+    let nome = autor.split(" ");
+
+    let nomeCorrigido = nome.map((palavra) => {
+        if(palavra !== "da" && palavra !== "de" && palavra !== "do"){
+            // Retorno a palavra filtrada com o caractere indice 0 em caixa alta
+            return palavra.charAt(0).toLocaleUpperCase() + palavra.slice(1);
+        } else {
+            return palavra;
+        }
+    })
+    nomeCorrigido.join(" ");
+    autoresCorrigidos.push(nomeCorrigido.join(" "));
 });
 
-
-  
+alert(`Os autores originais são:\n${autoresBrasileiros.join("\n")}`);
+alert(`Os autores corrigidos são:\n${autoresCorrigidos.join("\n")}`);
