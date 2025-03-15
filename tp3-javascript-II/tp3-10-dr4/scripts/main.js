@@ -35,12 +35,13 @@ const escritores = [
     "Guimarães Rosa"
 ];
 
-//Variáveis 
+//Constantes que obtem itens do HTML
 const btJogar = document.querySelector("#bt-jogar");
 const resultado = document.querySelector("#resultado");
 const inputValidar = document.querySelector("#input-validar");
 const btValidar = document.querySelector("#bt-validar");
 
+//Variaveis globais para armazenamento
 let exibirResultado = document.querySelector("#exibir-resultado");
 let validar;
 
