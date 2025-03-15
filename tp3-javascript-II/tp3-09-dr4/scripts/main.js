@@ -21,10 +21,6 @@ Teste o seu código.
 
 */
 
-// Bolão da Megasena
-// mínimo de 6 e o máximo de 15 números
-// numero de 01 até 60
-
 function bolaoMegasena(){
 
 //Entrada de dados
