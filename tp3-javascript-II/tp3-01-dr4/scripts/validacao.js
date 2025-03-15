@@ -6,10 +6,11 @@ function minLength(valor, tamanho) {
     return true;
 }
 
-//Validar strings maiores que "n"
+
 let maxLength = (valor, tamanho) => {
     if(valor.length > tamanho){
         return false;
     }
     return true;
 }
+

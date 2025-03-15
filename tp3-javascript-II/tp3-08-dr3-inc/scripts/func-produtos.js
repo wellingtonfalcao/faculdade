@@ -16,8 +16,13 @@ function mostrarProdutos(lista, destino, tipo = "li") {
     elementoDestino.innerHTML = "";
 
     lista.forEach(item => {
-        let elemento = document.createElement(tipo); 
+        
+        let elemento = document.createElement(tipo);
+        let excluir = document.createElement("button");
+        excluir.textContent = "Excluir";
         elemento.textContent = item; 
         elementoDestino.appendChild(elemento); 
+        elemento.appendChild(excluir); 
+        dasdsadsad
     });
 }

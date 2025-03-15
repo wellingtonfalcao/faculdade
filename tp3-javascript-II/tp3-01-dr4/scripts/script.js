@@ -20,7 +20,9 @@ Implemente maxLength usando a sintaxe de função de seta.
 
 function solicitarPalavra(){
     let palavraUsuario = prompt("Digite uma palavra entre 5 e 10 caracteres.");
-
+    if(palavraUsuario === null){
+        return 0;
+    }
     if(minLength(palavraUsuario, 5) && maxLength(palavraUsuario, 10)){
         alert("Validado!");
     } else {
