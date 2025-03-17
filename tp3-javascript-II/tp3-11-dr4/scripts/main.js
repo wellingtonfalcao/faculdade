@@ -1,5 +1,5 @@
 let tituloHTML = document.querySelector("#title");
-tituloHTML.textContent = "Exercício 10: - Jogo de Palavras - Versão 1";
+tituloHTML.textContent = "Exercício 11: - Jogo de Palavras - Versão 2";
 
 //import { gerarNumeros } from "./func-random.js";
 //import { sortNumberAsc } from "./func-ordenacao.js";
@@ -8,17 +8,15 @@ tituloHTML.textContent = "Exercício 10: - Jogo de Palavras - Versão 1";
 
 /* 
 
-Exercício 10 Jogo de Palavras - Versão 1
+Exercício 11 Jogo de Palavras - Versão 2
 
-Construir uma aplicação web com o layout definido abaixo.
-https://lms.infnet.edu.br/moodle/pluginfile.php/1135499/mod_assign/intro/unnamed%20%2830%29.png
- 
-Defina um array com 10 nomes de escritores para escolher um escritor aleatório, 
-exibindo seu nome com as letras embaralhadas para o usuário tentar adivinhar.
+Crie uma nova aplicação aproveitando o que fez na questão anterior, 
+mas que agora carregue o array de palavras com os municípios de uma UF da sua escolha.
 
 Observações:
 
-Utilize HTML para construção da tela.
+Utilize a API do IBGE para acessar os municípios. Por exemplo, 
+esta é a URL da UF Rio de Janeiro: https://servicodados.ibge.gov.br/api/v1/localidades/estados/33/municipios
 
 */
 
