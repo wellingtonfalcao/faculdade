@@ -15,18 +15,40 @@ Ao enviar o formulário, exiba uma mensagem de agradecimento com as informaçõe
 
 */
 
-let select = document.querySelector("#opcoes");
-let mensagem = document.querySelector("#mensagem");
 
+let btEnviar = document.querySelector("#enviar");
 
-select.addEventListener("focus", () => {
-  mensagem.textContent = "Selecione uma opção";
-});
+btEnviar.addEventListener("click", () => {
+  
+  let errnome = document.querySelector("#errnome")
+  let erremail = document.querySelector("#erremail")
+  
+  errnome.textContent = "";
+  errnome.textContent = "";
 
-select.addEventListener("change", () => {
-  if (select.value !== "") {
-    mensagem.textContent = `Você escolheu: ${select.value}`;
-  } else {
-    mensagem.textContent = "";
+  let valido = true;
+
+  let nome = document.querySelector("#nome").value.trim();
+  let email = document.querySelector("#email").value.trim();
+
+  if(nome === ""){
+    errnome.textContent = "Digite seu nome";
+    valido = false;
   }
+  
+  if (!email.includes("@") || !email.includes(".")) {
+    erremail.textContent = "Digite um e-mail válido";
+    valido = false;
+  } 
+  
+  if (valido){
+    alert(`Agradecemos o envio de suas informações:\nNome: ${nome}\nE-mail: ${email}`)
+    document.querySelector("#nome").value = "";
+    document.querySelector("#email").value = "";
+    errnome.textContent = "";
+    erremail.textContent = "";
+  }
+
 });
+
+
