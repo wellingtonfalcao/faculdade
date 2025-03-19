@@ -8,4 +8,4 @@
 //Código
 
 Codesandbox
-https://codesandbox.io/p/sandbox/github/wellingtonfalcao/faculdade/tree/main/tp3-javascript-II/<exercicio>
+https://codesandbox.io/p/sandbox/github/wellingtonfalcao/faculdade/tree/main/<materia>/<exercicio>
