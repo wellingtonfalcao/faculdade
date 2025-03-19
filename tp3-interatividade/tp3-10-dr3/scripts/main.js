@@ -20,21 +20,22 @@ some 1 à pontuação total. Exiba a pontuação em um alerta.
 const btCorrigir = document.querySelector("#corrigir");
 btCorrigir.addEventListener("click",executarQuiz);
 
+
+
 function executarQuiz(){
     let pontuacao = 0;
 
-    let questao1 = pontuar("#questao-1", "a");
-    let questao2 = pontuar("#questao-2", "b");
-    let questao3 = pontuar("#questao-3", "a");
+    pontuar("#questao-1", "a");
+    pontuar("#questao-2", "b");
+    pontuar("#questao-3", "a");
 
-    console.log(pontuacao)
     function pontuar(questao, correto){
-    let qst = document.querySelector(questao);
-    let esc = qst.querySelector('input[type="radio"]:checked');
-    if(esc && esc.value === correto){
-        pontuacao++
+        let qst = document.querySelector(questao);
+        let esc = qst.querySelector('input[type="radio"]:checked');
+        if(esc && esc.value === correto){
+            pontuacao++
+        }
     }
-}
     alert(`Você fez ${pontuacao} pontos do total de 3 questões`);
 }
 
