@@ -1,5 +1,5 @@
 let tituloHTML = document.querySelector("#title");
-tituloHTML.textContent = "Exercício 11: - Formulário com Aceitação de Termos e Condições";
+tituloHTML.textContent = "Exercício 12: - Drag Drop 1";
 
 //import { gerarNumeros } from "./func-random.js";
 //import { sortNumberAsc } from "./func-ordenacao.js";
@@ -8,27 +8,61 @@ tituloHTML.textContent = "Exercício 11: - Formulário com Aceitação de Termos
 
 /* 
 
-11 Formulário com Aceitação de Termos e Condições
+12 Grupo - Drag Drop 1
 
-Crie no arquivo html um formulário e nele crie um título e um parágrafo, 
-simulando um campo obrigatório que deve ser lido e aceito. Para isso, crie um campo de “checkbox”, 
-um botão e faça com que esse form só seja enviado se o usuário marcar o checkbox, 
-aceitando assim os “termos e condições”. Mostre um alerta ao usuário se puder ou não enviar o form.
+Utilizando a explicação do CodeSandbox como base, no arquivo script.js crie um programa, que permita:
+
+Mover os elementos div de classe “caixinha” para os elementos <div class='container'>
+Arrastar os elementos div de classe “caixinha” entre os elementos <div class='container'>
+Link: https://codesandbox.io/p/sandbox/2n7w43
+Observação: Faça as modificações necessárias no arquivo “index.html” para resolver o exercício.
 
 */
 
-let formulario = document.querySelector("#formulario");
-formulario.addEventListener("submit", (event) => {
-    event.preventDefault();
-    let checkbox = document.querySelector("#termo");
-    if(!checkbox.checked) {
-        alert("É necessário aceitar os termos do contrato.");
-    } else {
-        alert("Formulário enviado com sucesso!");
-        //formulario.submit();
-    }
+
+// - Evento drag
+
+// O evento `drag` ocorre quando um elemento, é `arrastado` 
+// pelo usuário. Ele é `disparado` no elemento que está sendo 
+// arrastado. Para habilitar o `arrastar` de um elemento, 
+// é necessário definir o atributo `draggable`, como `true` 
+// para esse elemento. Além disso, é necessário adicionar um 
+//`ouvinte de evento`, para o evento `dragstart` no elemento 
+// arrastado, que define os dados a serem `transferidos` durante
+// o arrastar, utilizando o método `setData` do objeto `dataTransfer`
+
+const containers = document.querySelectorAll(".container");
+const caixinhas = document.querySelectorAll("#novo div");
+
+caixinhas.forEach((caixinha, index) => {
+    caixinha.id = "caixina" + index
+    caixinha.addEventListener("dragstart", (event) => {
+        event.dataTransfer.setData("text/plain", caixinha.id);              
+    });
 });
 
+// - Evento drop
 
+// O evento `drop` ocorre quando um elemento arrastado, é `solto` em 
+// um alvo `válido`. Ele é `disparado` no elemento de destino, onde 
+// o `elemento arrastado` está sendo `solto`. Para `permitir` que um 
+// elemento seja `solto` em um `alvo`, é necessário adicionar um 
+// `ouvinte de evento`, para o evento `dragover` no elemento de destino 
+// e, dentro desse ouvinte, chamar o método `preventDefault()` para 
+// permitir que o elemento seja solto. Além disso, é necessário adicionar 
+// um ouvinte de evento para o evento `drop` no elemento de destino, onde 
+// a `lógica` para manipular os `dados transferidos` é implementada.
+
+containers.forEach(container => {
+    container.addEventListener("dragover", (event) => {
+        event.preventDefault(); 
+    });
+    
+    container.addEventListener("drop", (event) => {        
+        const id = event.dataTransfer.getData("text/plain");
+        const caixinhaMovida = document.getElementById(id);
+        container.appendChild(caixinhaMovida);       
+    });
+});
 
 

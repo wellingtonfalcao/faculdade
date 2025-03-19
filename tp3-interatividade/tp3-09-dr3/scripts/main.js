@@ -18,5 +18,22 @@ ele deve ser inserido na área de texto.
 
 */
 
+let texto = document.querySelector("#texto");
+let caixa = document.querySelector("#caixa");
+
+
+texto.addEventListener("dragstart", (event) => {
+    event.dataTransfer.setData("text/plain", texto.id);
+})
+
+caixa.addEventListener("dragover", (event) => {
+    event.preventDefault();
+})
+
+caixa.addEventListener("drop", (event) => {
+    const id = event.dataTransfer.getData("text/plain");
+    const bola = document.getElementById(id);
+    caixa.appendChild(bola);
+})
 
 

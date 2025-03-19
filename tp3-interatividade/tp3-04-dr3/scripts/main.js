@@ -18,8 +18,8 @@ let imagem = document.querySelector("#bola");
 let caixa = document.querySelector("#caixa");
 
 
-imagem.addEventListener("dragstart", (event) => {
-    event.dataTransfer.setData("text/plain", imagem.id);
+texto.addEventListener("dragstart", (event) => {
+    event.dataTransfer.setData("text/plain", texto.id);
 })
 
 caixa.addEventListener("dragover", (event) => {

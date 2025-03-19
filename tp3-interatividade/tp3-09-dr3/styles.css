@@ -22,4 +22,18 @@ body {
   color: white;
 }
 
+#caixa-texto {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#caixa {
+  border: 1px dashed white;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
 

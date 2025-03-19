@@ -9,9 +9,10 @@
     <script src="./scripts/main.js" type="module" defer></script>
   </head>
   <body>
-    <form>
-      <input type="text" placeholder="Digite uma frase" id="input" /><br />
-      <p id="paragrafo"></p>
-    </form>
+    <div style="display: flex; gap: 15px;">
+    <div id="caixa-texto"><p id="texto" draggable="true">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+    </div>
+    <div id="caixa" class="caixa"></div>
+  </div>
   </body>
 </html>
