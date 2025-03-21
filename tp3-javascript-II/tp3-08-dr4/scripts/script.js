@@ -1,17 +1,16 @@
 let tituloHTML = document.querySelector("#title");
-tituloHTML.textContent = "Exercício 7: Lista de Compras - Parte 1";
+tituloHTML.textContent = "Exercício 8: Lista de Compras - Parte 2";
 
 /* 
 
-Exercício 7: Lista de Compras - Parte 1
-
-Crie uma aplicação com o layout sugerido abaixo que permita ao usuário incluir itens em uma lista de compras.
+Crie uma nova aplicação copiando os códigos da questão anterior e inclua um botão em cada item para excluí-lo. 
 
 
 Observações:
 
-Crie funções incluir e mostrarLista.
-Utilize um array para guardar os itens da lista.
+Crie a função excluir.
+Utilize splice para excluir o item da lista.
+Utilize template de string para facilitar a criação da linha com o item no HTML.
 
 */
 
@@ -30,10 +29,9 @@ btAdicionar.addEventListener("click", () => {
 function mostrarProdutos(){
     listaHTML.innerHTML = "";
     lista.sort();
-    lista.forEach( item => {
-        listaHTML.innerHTML += `<li>${item}</li>`;
+    lista.forEach( (item, index) => {
+        btExcluir = `<button onclick="excluirProduto(${index})">Excluir</button>`
+        listaHTML.innerHTML += `<li>${item} ${btExcluir}</li>`;
     })
 }
-
-
 

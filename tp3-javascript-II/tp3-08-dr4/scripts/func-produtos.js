@@ -6,3 +6,8 @@ function adicionarProduto(lista, produto){
         lista.push(produto.trim());
     }
 }
+
+function excluirProduto(index) {
+    lista.splice(index, 1); 
+    mostrarProdutos();
+}
