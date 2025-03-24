@@ -18,22 +18,21 @@ Crie uma função para calcular o fatorial de um número, sendo este número inf
 Chame esta função passando o número informado pelo usuário.
 
 */
-function numeroInteiro(num){
-    let flag = true
-    if(num === null){
-        flag = false;
-    } else if(isNaN(num.trim()) || num.trim() === ""){
-        flag = false;
+
+function calcularFatorial() {
+    let numeroUsuario = prompt("Digite um número para calcular seu fatorial.");
+
+    if(numeroUsuario === null){
+        alert("Programa cancelado pelo usuário."); 
+    } else if(isNaN(numeroUsuario.trim()) || numeroUsuario.trim() === ""){
+        alert("Digite um valor válido");
+        return calcularFatorial() 
     }
-    return flag
+    // alert que chama a função fatorial em func-formulas.js
+    alert(`O fatorial do número ${numeroUsuario} é ${fatorial(numeroUsuario)}`);
 }
 
-numeroInteiro("3")
+calcularFatorial();
 
 
   
-
-//let numUsuario = prompt("Digite um número para calcular seu fatorial");
-
-
-// console.log(fatorial());
