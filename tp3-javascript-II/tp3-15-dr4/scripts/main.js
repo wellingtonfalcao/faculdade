@@ -32,7 +32,6 @@ function calcularFatorial() {
         alert("Digite um valor válido");
         return calcularFatorial() 
     }
-    // alert que chama a função fatorial em func-formulas.js
     let resultadoFatorial = fatorial(numeroUsuario);
     let paragrafo = document.getElementById("paragrafo");
     paragrafo.textContent = `O fatorial do número ${numeroUsuario} é ${resultadoFatorial}`
