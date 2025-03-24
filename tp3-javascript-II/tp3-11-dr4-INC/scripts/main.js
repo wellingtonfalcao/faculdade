@@ -10,28 +10,32 @@ tituloHTML.textContent = "Exercício 11: - Jogo de Palavras - Versão 2";
 
 Exercício 11 Jogo de Palavras - Versão 2
 
-Crie uma nova aplicação aproveitando o que fez na questão anterior, 
-mas que agora carregue o array de palavras com os municípios de uma UF da sua escolha.
+Crie uma nova aplicação aproveitando o que fez na questão anterior,
+mas que agora carregue o array de palavras com os municípios de uma 
+UF da sua escolha.
 
 Observações:
 
 Utilize a API do IBGE para acessar os municípios. Por exemplo, 
-esta é a URL da UF Rio de Janeiro: https://servicodados.ibge.gov.br/api/v1/localidades/estados/33/municipios
+esta é a URL da UF Rio de Janeiro: 
+https://servicodados.ibge.gov.br/api/v1/localidades/estados/33/municipios
 
 */
+const cidades = [];
 
-const escritores = [
-    "Machado de Assis",
-    "Clarice Lispector",
-    "Carlos Drummond de Andrade",
-    "Monteiro Lobato",
-    "Cecília Meireles",
-    "Graciliano Ramos",
-    "Jorge Amado",
-    "Rachel de Queiroz",
-    "Lima Barreto",
-    "Guimarães Rosa"
-];
+async function carregarMunicipios() {
+    try {
+        //Aguardar recebimento dos dados do JSON
+        const response = await fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados/33/municipios");
+        const municipios = await response.json();
+        municipios.forEach(municipio => cidades.push(municipio.nome));// Inserir a propriedade nome dentro do array cidades.
+    } catch (error) {
+        console.error('Erro ao buscar os dados:', error); // caso ocorra um erro exibe no console.
+    } 
+}
+
+carregarMunicipios();
+console.log(cidades)
 
 //Constantes que obtem itens do HTML
 const btJogar = document.querySelector("#bt-jogar");
@@ -48,14 +52,14 @@ let validar;
 btJogar.addEventListener("click", () => {
     
     //Faz cópia do array para embaralhar o índice dos autores
-    let escritoresSort = [...escritores];
-    escritoresSort.sort(() => Math.random() - 0.5);
+    let cidadesSort = [...cidades];
+    cidadesSort.sort(() => Math.random() - 0.5);
 
     //Pego o último autor para validar depois
-    validar = escritoresSort[escritoresSort.length - 1];
+    validar = cidadesSort[cidadesSort.length - 1];
     
     //Embaralhar os caracteres do nome do autor
-    escritoresSort.forEach((item) => {
+    cidadesSort.forEach((item) => {
         let letras = item.split("");
         letras.sort(() => Math.random() - 0.5);
         resultado.textContent = letras.join("");
