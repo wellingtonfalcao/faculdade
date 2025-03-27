@@ -19,3 +19,12 @@ export function removerRepetidos (array) {
 export function anoBissexto (numero) {
     return (numero % 4 === 0  && numero % 100 !== 0) || (numero % 400 === 0);
 }
+
+export function anosBissextos (array) {
+  let anos = [];
+  array.map( ano => {
+    if(anoBissexto(ano))
+    anos.push(ano)
+  })
+  return anos;
+}

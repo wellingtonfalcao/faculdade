@@ -1,7 +1,7 @@
 let tituloHTML = document.querySelector("#title");
 tituloHTML.textContent = "Questao 3: Encontrar anos bissextos em um array";
 
-import { anoBissexto } from "./funcoes.js";
+import { anosBissextos } from "./funcoes.js";
 
 /*
 
@@ -35,16 +35,9 @@ window.addEventListener("load", () => {
     2020, 2021, 2022, 2023, 2024, 2025
   ];
 
-  function anosBissextos (array) {
-    let anos = [];
-    array.map( ano => {
-      if(anoBissexto(ano))
-      anos.push(ano)
-    })
-    return anos;
-  }
+  const bissextos = anosBissextos(listaAnos).join(", ");
 
   document.write(`<h3>Entre ${listaAnos[0]} e ${listaAnos[listaAnos.length - 1]} os anos bissextos são:</h3>
-    <p>${anosBissextos(listaAnos).join(", ")}.</p><h3>O array original de anos é:</h3><p>${listaAnos.join(", ")}.</p>`);
+    <p>${bissextos}.</p><h3>O array original de anos é:</h3><p>${listaAnos.join(", ")}.</p>`);
 
 });
