@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
 
   tabuada = tabuada();
   
-  document.write(tabuada);
+  document.write(tabuada.join("<br>"));
   
 });
 
