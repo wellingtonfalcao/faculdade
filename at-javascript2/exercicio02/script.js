@@ -1,3 +1,6 @@
+let tituloHTML = document.querySelector("#title");
+tituloHTML.textContent = "Questao 2: Remover duplicatas em um array";
+
 import { transformarCaixaBaixa, removerRepetidos } from "./funcoes.js";
 
 /*
@@ -41,6 +44,6 @@ window.addEventListener("load", () => {
 
   let frutasCaixaBaixa = removerRepetidos(transformarCaixaBaixa(frutas))
 
-  document.write(`<h3>O array original frutas: ${frutas.join(", ")}</h3>
-    <h3>O array tratado removendo duplicadas ignorando caseSensitive: ${frutasCaixaBaixa.join(", ")}</h3>`);
+  document.write(`<h3>O array original frutas:</h3><p>${frutas.join(", ")}</p>
+    <h3>O array padronizado em caixa baixa e com repetições removidas</h3><p> ${frutasCaixaBaixa.join(", ")}</p>`);
 });

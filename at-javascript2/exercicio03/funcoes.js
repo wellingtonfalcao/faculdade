@@ -13,3 +13,9 @@ export function transformarCaixaBaixa (array) {
 export function removerRepetidos (array) {
     return [...new Set(array)]
   }
+
+
+//Função que recebe um ano e verifica se é bissesto ou não. Retorna um booleano 
+export function anoBissexto (numero) {
+    return (numero % 4 === 0  && numero % 100 !== 0) || (numero % 400 === 0);
+}
